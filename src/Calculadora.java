@@ -25,7 +25,7 @@ public class Calculadora {
     private JLabel textoinsertado;
     private JLabel textoinsertandose;
     private JButton a1Button;
-    private JButton negativo;
+    private JButton negativo; //Este boton no existe uwu
     private JButton a2Button;
     private JButton a0Button;
     private JButton a3Button;
@@ -116,7 +116,7 @@ public class Calculadora {
 
 
         //Operaciones
-
+        //SUMA
         Masbutton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -135,37 +135,6 @@ public class Calculadora {
             }
         });
 
-
-
-
-        //Igual
-
-        Igualbutton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (numeroActual.length() > 0) {
-                    operacionActual.append(numeroActual.toString());
-                    numeroActual.setLength(0);
-                }
-
-                String expresion = operacionActual.toString();
-
-                try {
-                    double resultado = evaluarExpresion(expresion);
-                    textoinsertado.setText(expresion);
-                    textoinsertandose.setText(formatearResultado(resultado));
-                    resultadoAnterior = resultado;
-                } catch (ArithmeticException ex) {
-                    textoinsertado.setText("");
-                    textoinsertandose.setText("No se puede dividir entre 0");
-                } catch (Exception ex) {
-                    textoinsertado.setText("");
-                    textoinsertandose.setText("Error de Sintaxis");
-                }
-
-                operacionActual.setLength(0);
-            }
-        });
 
         //RESTA
         RestButton.addActionListener(new ActionListener() {
@@ -221,6 +190,93 @@ public class Calculadora {
                     textoinsertado.setText(operacionActual.toString());
                     textoinsertandose.setText("0");
                 }
+            }
+        });
+
+        //Coma
+
+        coma.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!numeroActual.toString().contains(".")) {
+                    numeroActual.append(".");
+                    textoinsertandose.setText(numeroActual.toString());
+                }
+            }
+        });
+
+        //Operaciones Trigonometricas
+        SENButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double numero = Double.parseDouble(numeroActual.toString());
+                double resultado = Math.sin(Math.toRadians(numero));
+                resultado = Math.round(resultado * 100.0) / 100.0;
+                numeroActual.setLength(0);
+                numeroActual.append(resultado);
+                textoinsertandose.setText(numeroActual.toString());
+            }
+        });
+        COSButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double numero = Double.parseDouble(numeroActual.toString());
+                double resultado = Math.cos(Math.toRadians(numero));
+                resultado = Math.round(resultado * 100.0) / 100.0;
+                numeroActual.setLength(0);
+                numeroActual.append(resultado);
+                textoinsertandose.setText(numeroActual.toString());
+            }
+        });
+        TANButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double numero = Double.parseDouble(numeroActual.toString());
+                double resultado = Math.tan(Math.toRadians(numero));
+                resultado = Math.round(resultado * 100.0) / 100.0;
+                numeroActual.setLength(0);
+                numeroActual.append(resultado);
+                textoinsertandose.setText(numeroActual.toString());
+            }
+        });
+
+        //Borrar y restaurar botones
+        cButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                numeroActual.setLength(0);
+                operacionActual.setLength(0);
+                resultadoAnterior = 0;
+                textoinsertado.setText("");
+                textoinsertandose.setText("0");
+            }
+        });
+        //Igual
+
+        Igualbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (numeroActual.length() > 0) {
+                    operacionActual.append(numeroActual.toString());
+                    numeroActual.setLength(0);
+                }
+
+                String expresion = operacionActual.toString();
+
+                try {
+                    double resultado = evaluarExpresion(expresion);
+                    textoinsertado.setText(expresion);
+                    textoinsertandose.setText(formatearResultado(resultado));
+                    resultadoAnterior = resultado;
+                } catch (ArithmeticException ex) {
+                    textoinsertado.setText("");
+                    textoinsertandose.setText("No se puede dividir entre 0");
+                } catch (Exception ex) {
+                    textoinsertado.setText("");
+                    textoinsertandose.setText("Error de Sintaxis");
+                }
+
+                operacionActual.setLength(0);
             }
         });
     }
