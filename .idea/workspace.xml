@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c302896-ac1a-4729-9e5a-1f1da0bdfa58" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/exp4j_0_4_8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculadoraJavax.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CalculadoraJavax.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculadora.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculadora.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculadora.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,14 +37,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/FAMILIA TT/Downloads/exp4j-0.4.8.jar",
+    "last_opened_file_path": "C:/Users/skara/Downloads/exp4j-0.4.8.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "editor.preferences.import",
     "vue.rearranger.settings.migration": "true"
   }
@@ -59,6 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688939518217</updated>
       <workItem from="1688939519626" duration="11666000" />
+      <workItem from="1689022316137" duration="4592000" />
     </task>
     <servers />
   </component>

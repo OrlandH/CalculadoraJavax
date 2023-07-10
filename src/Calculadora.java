@@ -115,12 +115,7 @@ public class Calculadora {
         });
 
 
-
-
         //Operaciones
-
-
-
 
         Masbutton.addActionListener(new ActionListener() {
             @Override
@@ -169,6 +164,63 @@ public class Calculadora {
                 }
 
                 operacionActual.setLength(0);
+            }
+        });
+
+        //RESTA
+        RestButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (numeroActual.length() > 0) {
+                    operacionActual.append(numeroActual.toString());
+                    operacionActual.append("-");
+                    numeroActual.setLength(0);
+                    textoinsertado.setText(operacionActual.toString());
+                    textoinsertandose.setText("0");
+                } else if (resultadoAnterior != 0) {
+                    operacionActual.append(resultadoAnterior);
+                    operacionActual.append("-");
+                    textoinsertado.setText(operacionActual.toString());
+                    textoinsertandose.setText("0");
+                }
+            }
+        });
+
+        //MULTIPLICACION
+        xButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (numeroActual.length() > 0) {
+                    operacionActual.append(numeroActual.toString());
+                    operacionActual.append("*");
+                    numeroActual.setLength(0);
+                    textoinsertado.setText(operacionActual.toString());
+                    textoinsertandose.setText("0");
+                } else if (resultadoAnterior != 0) {
+                    operacionActual.append(resultadoAnterior);
+                    operacionActual.append("*");
+                    textoinsertado.setText(operacionActual.toString());
+                    textoinsertandose.setText("0");
+                }
+            }
+        });
+
+        //DIVISION
+        DIVbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (numeroActual.length() > 0) {
+                    operacionActual.append(numeroActual.toString());
+                    operacionActual.append("/");
+                    numeroActual.setLength(0);
+                    textoinsertado.setText(operacionActual.toString());
+                    textoinsertandose.setText("0");
+                } else if (resultadoAnterior != 0) {
+                    operacionActual.append(resultadoAnterior);
+                    operacionActual.append("/");
+                    textoinsertado.setText(operacionActual.toString());
+                    textoinsertandose.setText("0");
+                }
             }
         });
     }
