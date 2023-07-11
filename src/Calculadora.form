@@ -32,7 +32,7 @@
           <background color="-13223621"/>
           <font name="Arial" size="18" style="1"/>
           <foreground color="-1"/>
-          <text value="^"/>
+          <text value="^2"/>
         </properties>
       </component>
       <component id="2d7f7" class="javax.swing.JButton" binding="cButton" default-binding="true">
