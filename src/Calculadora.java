@@ -288,6 +288,44 @@ public class Calculadora {
                 operacionActual.setLength(0);
             }
         });
+        // Borrar un digito
+        DELButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String backspace = null;
+                if (textoinsertandose.getText().length() > 0){
+                    StringBuilder strB = new StringBuilder(textoinsertandose.getText());
+                    strB.deleteCharAt(textoinsertandose.getText().length() - 1);
+                    backspace = String.valueOf(strB);
+                    textoinsertandose.setText(backspace);
+                }
+            }
+        });
+        // Raiz
+        Raiz.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double numero = Double.parseDouble(numeroActual.toString());
+                double resultado = Math.sqrt(numero);
+                resultado = Math.round(resultado * 100.0) / 100.0;
+                numeroActual.setLength(0);
+                numeroActual.append(resultado);
+                textoinsertandose.setText(numeroActual.toString());
+            }
+        });
+
+        // Potencia
+        Potencia.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double numero = Double.parseDouble(numeroActual.toString());
+                double resultado = Math.pow(numero,2);
+                resultado = Math.round(resultado * 100.0) / 100.0;
+                numeroActual.setLength(0);
+                numeroActual.append(resultado);
+                textoinsertandose.setText(numeroActual.toString());
+            }
+        });
     }
 
 
