@@ -292,15 +292,12 @@ public class Calculadora {
         DELButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String backspace = null;
-                if (textoinsertandose.getText().length() > 0){
-                    StringBuilder strB = new StringBuilder(textoinsertandose.getText());
-                    strB.deleteCharAt(textoinsertandose.getText().length() - 1);
-                    backspace = String.valueOf(strB);
-                    textoinsertandose.setText(backspace);
-                }
-            }
+                if (numeroActual.length() > 0) {
+                    numeroActual.deleteCharAt(numeroActual.length() - 1);
+                    textoinsertandose.setText(numeroActual.toString());
+                }}
         });
+
         // Raiz
         Raiz.addActionListener(new ActionListener() {
             @Override
