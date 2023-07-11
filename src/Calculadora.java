@@ -192,6 +192,12 @@ public class Calculadora {
                 }
             }
         });
+        Raiz.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
 
         //Coma
 
@@ -206,6 +212,7 @@ public class Calculadora {
         });
 
         //Operaciones Trigonometricas
+        //SENO
         SENButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -217,6 +224,7 @@ public class Calculadora {
                 textoinsertandose.setText(numeroActual.toString());
             }
         });
+        //COSENO
         COSButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -228,6 +236,7 @@ public class Calculadora {
                 textoinsertandose.setText(numeroActual.toString());
             }
         });
+        //TANGENTE
         TANButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
